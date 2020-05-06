@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="FixSmallIosWebViewText.Views.CustomWebViewPage"
+    xmlns:vm="clr-namespace:FixSmallIosWebViewText.ViewModels"
+    Title="{Binding Title}">
+    <ContentPage.BindingContext>
+        <vm:WebViewViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout
+            Orientation="Vertical"
+            Padding="16"
+            Spacing="16">
+            <Label
+                Text="Fixing small text on iOS WKWebView's in Xamarin.Forms"
+                HorizontalTextAlignment="Center"
+                TextColor="{StaticResource PrimaryBrandColor}"
+                VerticalOptions="Center" />
+            <BoxView
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="{StaticResource PrimaryBrandColor}"
+                HeightRequest="0.5" />
+            <Grid>
+                <Label
+                    Text="Use custom HTML loading renderer"
+                    VerticalOptions="Center"
+                    TextColor="{StaticResource PrimaryBrandColor}" />
+                <Switch
+                    x:Name="OnOffSwitch"
+                    HorizontalOptions="End"
+                    Toggled="OnOffSwitch_Toggled" />
+            </Grid>
+            <BoxView
+                HorizontalOptions="FillAndExpand"
+                BackgroundColor="{StaticResource PrimaryBrandColor}"
+                HeightRequest="0.5" />
+
+            <Grid
+                x:Name="WebViewGrid"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+                <!-- WebView to be added here in code behind -->
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
